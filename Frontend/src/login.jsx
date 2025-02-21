@@ -4,6 +4,7 @@ import Login2 from './login2';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+
 function Login(){
    const [user, setUser] = useState({
         
@@ -29,7 +30,7 @@ function Login(){
       console.log("submit handle");
       if(user.password.length<6) 
       {
-          alert('password must contain 6 letters');
+          alert('password must contain 6 letterss');
        }
       try{
         const res = await axios.post('http://localhost:5555/login',user);
