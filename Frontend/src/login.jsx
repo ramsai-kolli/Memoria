@@ -33,7 +33,7 @@ function Login(){
           alert('password must contain 6 letterss');
        }
       try{
-        const res = await axios.post('http://localhost:5555/login',user);
+        const res = await axios.post('https://memoria-api.onrender.com/login',user);
               if(res.data.success){
                 alert("login Succesfully!");
                 console.log(res.data.message);// without window.location.href = '/home2'; this console.log is worked sucessfully

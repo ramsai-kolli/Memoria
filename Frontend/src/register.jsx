@@ -24,7 +24,7 @@ const changeHandler = (e) => {
         alert('password must contain 6 letters');
      }
     try{
-      const res= await axios.post('http://localhost:5555/register',user); //.then(res=>{
+      const res= await axios.post('https://memoria-api.onrender.com/register',user); //.then(res=>{
         console.log(res.data)
               if(res.data.success){
                 alert("registered Succesfully!");

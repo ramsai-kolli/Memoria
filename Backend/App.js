@@ -30,9 +30,14 @@ import bcrypt from 'bcrypt';
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 //app.use(cors({ origin: "http://localhost:5000" }));
  
+
+//const cors = require("cors");
+
+app.use(cors({ origin: "https://memoria-frontend.vercel.app/", credentials: true }));
+
 
 app.use(express.json());
 
