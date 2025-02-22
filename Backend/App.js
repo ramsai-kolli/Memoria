@@ -36,8 +36,13 @@ const app = express();
 
 //const cors = require("cors");
 
-app.use(cors({ origin: "https://memoria-frontend.vercel.app", credentials: true }));
+//app.use(cors({ origin: "https://memoria-frontend.vercel.app", credentials: true }));
 
+app.use(cors({
+  origin: "https://memoria-frontend.vercel.app",
+  methods: "POST",
+  allowedHeaders: "Content-Type, Authorization"
+}));
 
 app.use(express.json());
 
@@ -45,7 +50,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Memoria API!");
 });
 
-app.post('https://memoria-api.onrender.com/register',async(req,res)=>{ 
+app.post('/register',async(req,res)=>{ 
     try{
         const { name2,phone2, password2 } = req.body;
         const user1 = await Form.findOne({ name: req.body.name});
