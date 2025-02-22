@@ -40,8 +40,10 @@ const app = express();
 
 app.use(cors({
   origin: "https://memoria-frontend.vercel.app",
-  methods: "POST",
-  allowedHeaders: "Content-Type, Authorization"
+  // methods: "POST",
+  // allowedHeaders: "Content-Type, Authorization"
+  methods: ["GET", "POST", "PUT", "DELETE"], // Add allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"] // Keep this as needed
 }));
 
 app.use(express.json());
