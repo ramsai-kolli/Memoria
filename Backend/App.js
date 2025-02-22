@@ -36,6 +36,10 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Memoria API!");
+});
+
 app.post('/register',async(req,res)=>{ 
     try{
         const { name2,phone2, password2 } = req.body;
