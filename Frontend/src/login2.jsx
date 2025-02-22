@@ -87,12 +87,12 @@ function Login2(){
 
             try {
                 console.log("Fetching data for user:", userId);
-                const res = await axios.get(`http://localhost:5555/user-data/${userId}`);
+                const res = await axios.get(`https://memoria-api.onrender.com/user-data/${userId}`);
                 console.log("UseEffect  Profile Image ID1:", res.data);
                 if (res.data.success) {
                     setLine(res.data.data.map(entry => entry.text)); // Populate stored text
                     //setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
-                    setImageUrls(res.data.data.map(entry =>  `http://localhost:5555/image/${entry.profile_image_id}`));
+                    setImageUrls(res.data.data.map(entry =>  `https://memoria-api.onrender.com/image/${entry.profile_image_id}`));
                 }
 
 
@@ -203,7 +203,7 @@ function Login2(){
           
 try {
     console.log("Sending data:", formData);
-    const res = await axios.post("http://localhost:5555/login2", formData, {
+    const res = await axios.post("https://memoria-api.onrender.com/login2", formData, {
         headers: { "Content-Type": "multipart/form-data" }, // Important for file upload
     });
 
@@ -217,7 +217,7 @@ try {
         if (res.data.image_id) {
             console.log("this is in  post ");
             console.log("this is image ID in post =",res.data.image_id);
-            setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.image_id}`]);
+            setImageUrls((prevImages) => [...prevImages, `https://memoria-api.onrender.com/image/${res.data.image_id}`]);
             console.log("this is after setImageUrls");
         }
     }
