@@ -36,7 +36,7 @@ const app = express();
 
 //const cors = require("cors");
 
-app.use(cors({ origin: "https://memoria-frontend.vercel.app/", credentials: true }));
+app.use(cors({ origin: "https://memoria-frontend.vercel.app", credentials: true }));
 
 
 app.use(express.json());
