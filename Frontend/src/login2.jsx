@@ -236,15 +236,15 @@ try {
     const message2 = location.state?.message2 || "No message2 received";
     return(
         <>
-        <div className="d1"> 
-        <div className="d2"> 
-        <p className="p1">hello {message2}</p>
+        <div className="log2-d1"> 
+        <div className="log-2d2"> 
+        <p className="log2-p1">hello {message2}</p>
          
-        <p className="p2">  Login your Account {message2} succesfully</p>
-        <input className="i1" name="text" id="i1" type="text"></input>
-        <input className="i2" type="file" accept="image/*" onChange={(e) => setSelectedFile(e.target.files[0])} />
+        <p className="log2-p2">  Login your Account {message2} succesfully</p>
+        <input className="log2-i1" name="text" id="i1" type="text"></input>
+        <input className="log2-i2" type="file" accept="image/*" onChange={(e) => setSelectedFile(e.target.files[0])} />
 
-        <button className="btn" onClick={subhandle}>Add</button>
+        <button className="log2-btn" onClick={subhandle}>Add</button>
         {/* {line.map((obj,index)=>(
             <p key={index} >{obj}</p>
         ))} */}
