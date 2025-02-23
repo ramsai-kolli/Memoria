@@ -38,6 +38,7 @@ const app = express();
 
 //app.use(cors({ origin: "https://memoria-frontend.vercel.app", credentials: true }));
 
+
 app.use(cors({
   origin: "https://memoria-frontend.vercel.app",
   // methods: "POST",
@@ -47,6 +48,53 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+// const allowedOrigins = [
+//   "https://memoria-frontend.vercel.app", // Production frontend
+//   "http://localhost:5173" // Allow local development
+// ];
+
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary methods
+//   allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
+//   credentials: true // Required if using authentication (cookies, sessions)
+// }));
+
+ 
+// app.use(cors({
+//   origin: "*", // ALLOW ALL ORIGINS (Not for production)
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+//   credentials: true
+// }));
+
+
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     callback(null, true); // Allows all origins dynamically
+//   },
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   allowedHeaders: ["*"],
+//   credentials: true, // Allows credentials (cookies, auth headers)
+// };
+// app.use(cors(corsOptions));
+
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//   res.header("Access-Control-Allow-Headers", "*");
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   next();
+// });
+
+ 
 
 app.get("/", (req, res) => {
   res.send("Welcome to Memoria API!");

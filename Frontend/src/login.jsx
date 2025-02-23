@@ -1,4 +1,5 @@
 import React,{ useState,useEffect } from 'react';
+import './login.css'
 import { useLocation } from 'react-router-dom';
 import Login2 from './login2';
 import axios from 'axios';
@@ -63,16 +64,20 @@ function Login(){
 
     return(
         <>
+        <div className="d1"> 
+        <div className="d2"> 
         <form id='login-form' onSubmit={submitHandler} >
-          <label>this is login form</label><br></br>
-          <label>Phone No:</label>
-          <input value={user.phone} onChange={changeHandler} name='phone' type="tel"></input><br></br>
-          <label>Password:</label>
-          <input value={user.password} onChange={changeHandler} name='password' type="password"></input><br></br>
-          <button type="submit">Submit</button>
+          <label className="l1">This is login page</label><br></br>
+          <label className="l2">Phone No:</label>
+          <input className="i1" value={user.phone} onChange={changeHandler} name='phone' type="tel"></input><br></br>
+          <label className="l3">Password:</label>
+          <input className="i2" value={user.password} onChange={changeHandler} name='password' type="password"></input><br></br>
+          <button className="btn" type="submit">Submit</button>
 
         </form>        
-         
+        </div>
+        </div>
+
         </>
     )
 }
