@@ -1,4 +1,5 @@
 import React,{ useState,useEffect } from 'react';
+import './register.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 function Register(){
@@ -54,21 +55,24 @@ const changeHandler = (e) => {
 
     return(
         <>
-         <label>this is register form</label><br></br>
+        <div className="d1"> 
+        <div className="d2"> 
+         <label className="l1">This is register page</label><br></br>
         <form id='register-form' onSubmit={submitHandler} >
            
           
            
-          <input value={user.name} onChange={changeHandler} name='name' type='text' placeholder="enter name"  ></input><br></br>
+          <input className="i1" value={user.name} onChange={changeHandler} name='name' type='text' placeholder="enter name"  ></input><br></br>
            
-          <input value={user.phone} onChange={changeHandler} name='phone' type="tel" placeholder='enter no:'></input><br></br>
+          <input className="i2" value={user.phone} onChange={changeHandler} name='phone' type="tel" placeholder='enter no:'></input><br></br>
           
          
-          <input value={user.password} onChange={changeHandler} name='password' type="password"  placeholder='enter password'></input><br></br>
-          <button type="submit">Submit</button>
+          <input className="i3" value={user.password} onChange={changeHandler} name='password' type="password"  placeholder='enter password'></input><br></br>
+          <button className="btn1" type="submit">Submit</button>
 
         </form>        
-        
+        </div>
+        </div>
         </>
     )
 }

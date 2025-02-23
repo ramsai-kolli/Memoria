@@ -1,4 +1,5 @@
 import React,{ useState,useEffect } from 'react';
+import "./login2.css"
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
@@ -235,13 +236,15 @@ try {
     const message2 = location.state?.message2 || "No message2 received";
     return(
         <>
-        <p>hello {message2}</p>
-         <p>this is {message}</p> 
-        <p>YOU loged your Account succesfully</p>
-        <input name="text" id="i1" type="text"></input>
-        <input type="file" accept="image/*" onChange={(e) => setSelectedFile(e.target.files[0])} />
+        <div className="d1"> 
+        <div className="d2"> 
+        <p className="p1">hello {message2}</p>
+         
+        <p className="p2">  Login your Account {message2} succesfully</p>
+        <input className="i1" name="text" id="i1" type="text"></input>
+        <input className="i2" type="file" accept="image/*" onChange={(e) => setSelectedFile(e.target.files[0])} />
 
-        <button onClick={subhandle}>Add</button>
+        <button className="btn" onClick={subhandle}>Add</button>
         {/* {line.map((obj,index)=>(
             <p key={index} >{obj}</p>
         ))} */}
@@ -345,6 +348,9 @@ try {
 ) : (
     <p>No data available.</p>
 )} */}
+
+</div>
+</div>
         </>
     )
 }
