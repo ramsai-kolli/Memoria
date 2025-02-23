@@ -12,6 +12,13 @@
     padding: 20px;
 } */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto; /* Ensure scrolling is enabled */
+}
+
 /* Full-page background (Allow Scrolling) */
 .d1 {
     position: relative; /* Change fixed to relative */
