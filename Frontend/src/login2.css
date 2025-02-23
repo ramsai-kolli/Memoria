@@ -1,16 +1,30 @@
 /* Full-page background */
-.d1 {
+/* .d1 {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, #4b79a1, #283e51); /* Deep Blue Gradient */
+    background: linear-gradient(to right, #4b79a1, #283e51); 
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+} */
+
+/* Full-page background (Allow Scrolling) */
+.d1 {
+    position: relative; /* Change fixed to relative */
+    width: 100%;
+    min-height: 100vh; /* Use min-height instead of height */
+    background: linear-gradient(to right, #4b79a1, #283e51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
+
 
 /* Main content container */
 .d2 {
