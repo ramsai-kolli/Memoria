@@ -55,20 +55,20 @@ const changeHandler = (e) => {
 
     return(
         <>
-        <div className="d1"> 
-        <div className="d2"> 
-         <label className="l1">This is register page</label><br></br>
+        <div className="reg-d1"> 
+        <div className="reg-d2"> 
+         <label className="reg-l1">This is register page</label><br></br>
         <form id='register-form' onSubmit={submitHandler} >
            
           
            
-          <input className="i1" value={user.name} onChange={changeHandler} name='name' type='text' placeholder="enter name"  ></input><br></br>
+          <input className="reg-i1" value={user.name} onChange={changeHandler} name='name' type='text' placeholder="enter name"  ></input><br></br>
            
-          <input className="i2" value={user.phone} onChange={changeHandler} name='phone' type="tel" placeholder='enter no:'></input><br></br>
+          <input className="reg-i2" value={user.phone} onChange={changeHandler} name='phone' type="tel" placeholder='enter no:'></input><br></br>
           
          
-          <input className="i3" value={user.password} onChange={changeHandler} name='password' type="password"  placeholder='enter password'></input><br></br>
-          <button className="btn1" type="submit">Submit</button>
+          <input className="reg-i3" value={user.password} onChange={changeHandler} name='password' type="password"  placeholder='enter password'></input><br></br>
+          <button className="reg-btn1" type="submit">Submit</button>
 
         </form>        
         </div>

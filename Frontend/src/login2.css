@@ -20,7 +20,7 @@ html, body {
 }
 
 /* Full-page background (Allow Scrolling) */
-.d1 {
+.log2-d1 {
     position: relative; /* Change fixed to relative */
     width: 100%;
     min-height: 100vh; /* Use min-height instead of height */
@@ -34,7 +34,7 @@ html, body {
 
 
 /* Main content container */
-.d2 {
+.log2-d2 {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -48,7 +48,7 @@ html, body {
 }
 
 /* Welcome message */
-.p1 {
+.log2-p1 {
     font-size: 22px;
     font-weight: bold;
     color: #2c3e50;
@@ -56,7 +56,7 @@ html, body {
 }
 
 /* Success message */
-.p2 {
+.log2-p2 {
     font-size: 18px;
     color: #16a085;
     font-weight: 600;
@@ -64,7 +64,7 @@ html, body {
 }
 
 /* Input fields */
-.i1, .i2 {
+.log2-i1, .log2-i2 {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
@@ -74,20 +74,20 @@ html, body {
     transition: 0.3s ease-in-out;
 }
 
-.i1:focus, .i2:focus {
+.log2-i1:focus, .log2-i2:focus {
     border-color: #16a085;
     outline: none;
     box-shadow: 0px 0px 8px rgba(22, 160, 133, 0.5);
 }
 
 /* Upload button */
-.i2 {
+.log2-i2 {
     background-color: #ecf0f1;
     cursor: pointer;
 }
 
 /* Submit Button */
-.btn {
+.log2-btn {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
@@ -100,7 +100,7 @@ html, body {
     transition: 0.3s ease-in-out;
 }
 
-.btn:hover {
+.log2-btn:hover {
     background-color: #1a252f;
     transform: scale(1.05);
 }
