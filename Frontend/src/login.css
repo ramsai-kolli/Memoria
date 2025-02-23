@@ -1,5 +1,5 @@
 /* Full-page background */
-.d1 {
+.log-d1 {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
 }
 
 /* Form container */
-.d2 {
+.log-d2 {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -23,7 +23,7 @@
 }
 
 /* Form label */
-.l1 {
+.log-l1 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
@@ -32,7 +32,7 @@
 }
 
 /* Input fields */
-.i1, .i2 {
+.log-i1, .log-i2 {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -42,14 +42,14 @@
     transition: 0.3s ease-in-out;
 }
 
-.i1:focus, .i2:focus {
+.log-i1:focus, .log-i2:focus {
     border-color: #C33764;
     outline: none;
     box-shadow: 0px 0px 8px rgba(195, 55, 100, 0.5);
 }
 
 /* Submit Button */
-.btn {
+.log-btn {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
@@ -62,13 +62,13 @@
     transition: 0.3s ease-in-out;
 }
 
-.btn:hover {
+.log-btn:hover {
     background-color: #142185;
     transform: scale(1.05);
 }
 
 /* Labels for input fields */
-.l2, .l3 {
+.log-l2, .log-l3 {
     display: block;
     text-align: left;
     margin-top: 10px;

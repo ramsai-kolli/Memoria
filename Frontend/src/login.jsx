@@ -64,15 +64,15 @@ function Login(){
 
     return(
         <>
-        <div className="d1"> 
-        <div className="d2"> 
+        <div className="log-d1"> 
+        <div className="log-d2"> 
         <form id='login-form' onSubmit={submitHandler} >
-          <label className="l1">This is login page</label><br></br>
-          <label className="l2">Phone No:</label>
-          <input className="i1" value={user.phone} onChange={changeHandler} name='phone' type="tel"></input><br></br>
-          <label className="l3">Password:</label>
-          <input className="i2" value={user.password} onChange={changeHandler} name='password' type="password"></input><br></br>
-          <button className="btn" type="submit">Submit</button>
+          <label className="log-l1">This is login page</label><br></br>
+          <label className="log-l2">Phone No:</label>
+          <input className="log-i1" value={user.phone} onChange={changeHandler} name='phone' type="tel"></input><br></br>
+          <label className="log-l3">Password:</label>
+          <input className="log-i2" value={user.password} onChange={changeHandler} name='password' type="password"></input><br></br>
+          <button className="log-btn" type="submit">Submit</button>
 
         </form>        
         </div>
