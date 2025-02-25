@@ -237,7 +237,7 @@ try {
     return(
         <>
         <div className="log2-d1"> 
-        <div className="log-2d2"> 
+        <div className="log2-d2"> 
         <p className="log2-p1">hello {message2}</p>
          
         <p className="log2-p2">  Login your Account {message2} succesfully</p>
@@ -274,7 +274,7 @@ try {
         ✅ Display multiple images
        {imageUrls.length > 0 ? (
                 imageUrls.map((imageUrl, index) => (
-                    <img key={index} src={imageUrl} alt="Uploaded" style={{ width: "200px", border: "1px solid black", margin: "10px" }} />
+                    <img className='log2-image' key={index} src={imageUrl} alt="Uploaded" />
                 ))
             ) : (
                 <p>No Images Available</p>
