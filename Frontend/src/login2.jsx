@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function Login2(){
+    const [items , setItems] =useState([]);
     const [line , setLine] =useState([]);
     const [imageUrl, setImageUrl] = useState([]);
     const [imageUrls, setImageUrls] = useState([]);
@@ -91,6 +92,8 @@ function Login2(){
                 const res = await axios.get(`https://memoria-api.onrender.com/user-data/${userId}`);
                 console.log("UseEffect  Profile Image ID1:", res.data);
                 if (res.data.success) {
+                    setItems(res.data.data.map(entry => ({ textnew: entry.text, imagenew: `https://memoria-api.onrender.com/image/${entry.profile_image_id}`})))
+                    console.log("Items:",items)
                     setLine(res.data.data.map(entry => entry.text)); // Populate stored text
                     //setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
                     setImageUrls(res.data.data.map(entry =>  `https://memoria-api.onrender.com/image/${entry.profile_image_id}`));
@@ -248,12 +251,35 @@ try {
         {/* {line.map((obj,index)=>(
             <p key={index} >{obj}</p>
         ))} */}
-        {line.map((obj, index) => (
+
+        {/* {line.map((obj, index) => (
     <div key={index}>
        <p>{obj}</p> 
        </div>
-
 ))}
+
+✅ Display multiple images
+       {imageUrls.length > 0 ? (
+                imageUrls.map((imageUrl, index) => (
+                    <img className='log2-image' key={index} src={imageUrl} alt="Uploaded" />
+                ))
+            ) : (
+                <p>No Images Available</p>
+            )}  */}
+
+{items.map((item, index) => (
+            
+            <div className="res-div" key={index}>
+                 
+                <img className="log2-image" src={item.imagenew} alt="Uploaded" />
+                <p>{item.textnew}</p>
+            </div>
+        ))}
+
+
+
+
+
 
 {/* {line2.map((imageUrl, index) => (
     <div key={index}>
@@ -271,14 +297,7 @@ try {
             ) : (
                 <p>No Image Available</p>
             )} */}
-        ✅ Display multiple images
-       {imageUrls.length > 0 ? (
-                imageUrls.map((imageUrl, index) => (
-                    <img className='log2-image' key={index} src={imageUrl} alt="Uploaded" />
-                ))
-            ) : (
-                <p>No Images Available</p>
-            )} 
+         
 
 {/* {imageUrls.length > 0 ? (
     imageUrls.map((imageUrl, index) => (
