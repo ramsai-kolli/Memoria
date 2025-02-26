@@ -211,7 +211,7 @@ html, body {
     background-color: #0056b3;
 }
 
-.log2-image{
+/* .log2-image{
     margin-left: 30%;
     width: 250px;
     height: 200px;
@@ -219,4 +219,45 @@ html, body {
     display: block;
      
     margin-top: 20px;
+} */
+
+
+.res-div-m{
+    justify-items: center;
+
+}
+
+.res-div {
+  
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: 2px solid #ddd; /* Softer border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 15px; /* Inner spacing */
+    background-color: #fff; /* White background */
+    max-width: 400px; /* Optional: set a max width */
+    transition: 0.3s ease-in-out; /* Smooth transition */
+}
+
+.res-div:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+.res-div2{
+    justify-content: center;
+}
+
+.log2-image{
+    
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    display: block;
+     
+    margin-top: 20px;
+}
+.text-para{
+    color:#1334db
 }
