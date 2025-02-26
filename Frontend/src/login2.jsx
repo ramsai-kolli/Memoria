@@ -272,7 +272,7 @@ try {
             <div className="res-div" key={index}>
                  
                 <img className="log2-image" src={item.imagenew} alt="Uploaded" />
-                <p>{item.textnew}</p>
+                <p className="text-para">{item.textnew}</p>
             </div>
         ))}
 
