@@ -267,16 +267,20 @@ try {
                 <p>No Images Available</p>
             )}  */}
 
+<div className="res-div-m"> 
+
 {items.map((item, index) => (
             
             <div className="res-div" key={index}>
+                <div className="res-div2">
                  
                 <img className="log2-image" src={item.imagenew} alt="Uploaded" />
                 <p className="text-para">{item.textnew}</p>
+                </div>
             </div>
         ))}
 
-
+</div>
 
 
 
