@@ -152,7 +152,7 @@ function Login2(){
     const subhandle2 = async(id) =>{
         console.log("id is deleted:",id) 
       try{
-        const res = await axios.delete(`http://localhost:5555/user-data/${id}`);
+        const res = await axios.delete(`https://memoria-api.onrender.com/user-data/${id}`);
        // setItems(items.filter(() => .id !== id));
        // setItems(items.filter((card) => card.id === id));
       // setItems(items.filter((card) => card.id !== id));
