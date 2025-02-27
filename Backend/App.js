@@ -551,6 +551,26 @@ app.post('/login', async (req, res) => {
 //       res.status(500).json({ success: false, message: "Internal Server Error" });
 //   }
 // });
+app.put('/edit',async (req, res) => {
+  const { val1 } = req.body;
+  const {editId}  = req.body;
+  console.log("value1 :",val1)
+  console.log("editId1 :",editId)
+  try { 
+    const form = await Form2.findByIdAndUpdate(
+      editId ,
+      { text:val1 }, // Update the text field
+      { new: true }
+    );
+    if(!val1){
+      return res.json({success:false})
+    }
+    return res.json({success:true})
+    }
+    
+catch(error){
+  res.status(500).json({ success: false, message: "Error deleting card" });
+}})
 
 app.delete('/user-data/:id', async(req,res) => {
   try{
