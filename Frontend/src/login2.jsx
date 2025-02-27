@@ -91,7 +91,7 @@ function Login2(){
             const res = await axios.get(`https://memoria-api.onrender.com/user-data/${userId}`);
             console.log("UseEffect  Profile Image ID1:", res.data);
             if (res.data.success) {
-                setItems(res.data.data.map(entry => ({ textnew: entry.text, imagenew: `https://memoria-api.onrender.com/image/${entry.profile_image_id}`})))
+                setItems(res.data.data.map(entry => ({  idnew: entry._id,textnew: entry.text, imagenew: `https://memoria-api.onrender.com/image/${entry.profile_image_id}`})))
                 console.log("Items:",items)
                 setLine(res.data.data.map(entry => entry.text)); // Populate stored text
                 //setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
