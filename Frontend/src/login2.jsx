@@ -38,115 +38,140 @@ function Login2(){
     //     if (userId) fetchUserData();
     // }, [userId]);
 
-    useEffect(() => {
-        const fetchUserData = async () => {
-            // try {
-            //     console.log("Fetching data for user:", userId);
-            //     const res = await axios.get(`http://localhost:5555/user-data/${userId}`);
-            //     console.log("UseEffect  Profile Image ID1:", res.data);
-            //     if (res.data.success) {
+    const fetchUserData = async () => {
+        // try {
+        //     console.log("Fetching data for user:", userId);
+        //     const res = await axios.get(`http://localhost:5555/user-data/${userId}`);
+        //     console.log("UseEffect  Profile Image ID1:", res.data);
+        //     if (res.data.success) {
 
-            //     //     const userData = res.data.data;
-            //     //     // Store texts and images correctly
-            //     //     setLine(userData.map(entry => entry.text));  // Extract texts into an array
-            //     //     const images = userData.map(entry => entry.image).filter(img => img); // Filter out null images
-            //     //     //setImageUrls(images);  // Store the array of image URLs
-            //     //     setImageUrls((prevImages) => [...prevImages, images]);
-            //     //  console.log("set Images=",setImageUrls)
-
+        //     //     const userData = res.data.data;
+        //     //     // Store texts and images correctly
+        //     //     setLine(userData.map(entry => entry.text));  // Extract texts into an array
+        //     //     const images = userData.map(entry => entry.image).filter(img => img); // Filter out null images
+        //     //     //setImageUrls(images);  // Store the array of image URLs
+        //     //     setImageUrls((prevImages) => [...prevImages, images]);
+        //     //  console.log("set Images=",setImageUrls)
 
 
-            //         const userData = res.data.data;
-            //         console.log("User Data:", userData);
-            //         setLine([userData.text]); // Store text as an array
-            //         // setImageUrl(userData.image); 
-            //         if (userData.profile_image_id) {
-            //             console.log("Profile Image ID2:", res.data.data.profile_image_id);
-            //            // setImageUrls((prevImages) => [...prevImages, userData.image]);
-            //             setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
-            //         }  
 
-            //     //     const userData = res.data; // This is an object, not an array
-            //     //     console.log("user =",userData)
-                
-            //     // // Convert object into an array before using .map()
-            //     // // setLine([userData.text]);  
-            //     // // setLine2([userData.image]); 
+        //         const userData = res.data.data;
+        //         console.log("User Data:", userData);
+        //         setLine([userData.text]); // Store text as an array
+        //         // setImageUrl(userData.image); 
+        //         if (userData.profile_image_id) {
+        //             console.log("Profile Image ID2:", res.data.data.profile_image_id);
+        //            // setImageUrls((prevImages) => [...prevImages, userData.image]);
+        //             setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
+        //         }  
 
-            //     // setLine(res.data.data.map(entry => entry.text)); 
-
-            //         // Store text as an array (so UI mapping logic still works)
-            //     //     console.log("text",res.data.data.text)
-            //     //    // setLine([...line,res.data.data.text]);
-            //     //    setLine(res.data.data.map(entry => entry.text));
-    
-            //     //     // Store image URL as an array
-            //     //     setLine2([res.data.data.image]); 
-            //     }
-            // } catch (error) {
-            //     console.log("Error fetching user data:", error);
-            // }
-
-            try {
-                console.log("Fetching data for user:", userId);
-                const res = await axios.get(`https://memoria-api.onrender.com/user-data/${userId}`);
-                console.log("UseEffect  Profile Image ID1:", res.data);
-                if (res.data.success) {
-                    setItems(res.data.data.map(entry => ({ textnew: entry.text, imagenew: `https://memoria-api.onrender.com/image/${entry.profile_image_id}`})))
-                    console.log("Items:",items)
-                    setLine(res.data.data.map(entry => entry.text)); // Populate stored text
-                    //setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
-                    setImageUrls(res.data.data.map(entry =>  `https://memoria-api.onrender.com/image/${entry.profile_image_id}`));
-                }
-
-
-                // if (res.data.success) {
-
-                // //     const userData = res.data.data;
-                // //     // Store texts and images correctly
-                // //     setLine(userData.map(entry => entry.text));  // Extract texts into an array
-                // //     const images = userData.map(entry => entry.image).filter(img => img); // Filter out null images
-                // //     //setImageUrls(images);  // Store the array of image URLs
-                // //     setImageUrls((prevImages) => [...prevImages, images]);
-                // //  console.log("set Images=",setImageUrls)
-
-                
-
-                //     const userData = res.data.data;
-                //     console.log("User Data:", userData);
-                //     setLine([userData.text]); // Store text as an array
-                //     // setImageUrl(userData.image); 
-                //     if (userData.profile_image_id) {
-                //         console.log("Profile Image ID2:", res.data.data.profile_image_id);
-                //        // setImageUrls((prevImages) => [...prevImages, userData.image]);
-                //         setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
-                //     }  
-
-                // //     const userData = res.data; // This is an object, not an array
-                // //     console.log("user =",userData)
-                
-                // // // Convert object into an array before using .map()
-                // // // setLine([userData.text]);  
-                // // // setLine2([userData.image]); 
-
-                // // setLine(res.data.data.map(entry => entry.text)); 
-
-                //     // Store text as an array (so UI mapping logic still works)
-                // //     console.log("text",res.data.data.text)
-                // //    // setLine([...line,res.data.data.text]);
-                // //    setLine(res.data.data.map(entry => entry.text));
-    
-                // //     // Store image URL as an array
-                // //     setLine2([res.data.data.image]); 
-                // }
-            } catch (error) {
-                console.log("Error fetching user data:", error);
-            }
+        //     //     const userData = res.data; // This is an object, not an array
+        //     //     console.log("user =",userData)
             
-        };
+        //     // // Convert object into an array before using .map()
+        //     // // setLine([userData.text]);  
+        //     // // setLine2([userData.image]); 
+
+        //     // setLine(res.data.data.map(entry => entry.text)); 
+
+        //         // Store text as an array (so UI mapping logic still works)
+        //     //     console.log("text",res.data.data.text)
+        //     //    // setLine([...line,res.data.data.text]);
+        //     //    setLine(res.data.data.map(entry => entry.text));
+
+        //     //     // Store image URL as an array
+        //     //     setLine2([res.data.data.image]); 
+        //     }
+        // } catch (error) {
+        //     console.log("Error fetching user data:", error);
+        // }
+
+        try {
+            console.log("Fetching data for user:", userId);
+            const res = await axios.get(`https://memoria-api.onrender.com/user-data/${userId}`);
+            console.log("UseEffect  Profile Image ID1:", res.data);
+            if (res.data.success) {
+                setItems(res.data.data.map(entry => ({ textnew: entry.text, imagenew: `https://memoria-api.onrender.com/image/${entry.profile_image_id}`})))
+                console.log("Items:",items)
+                setLine(res.data.data.map(entry => entry.text)); // Populate stored text
+                //setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
+                setImageUrls(res.data.data.map(entry =>  `https://memoria-api.onrender.com/image/${entry.profile_image_id}`));
+            }
+
+
+            // if (res.data.success) {
+
+            // //     const userData = res.data.data;
+            // //     // Store texts and images correctly
+            // //     setLine(userData.map(entry => entry.text));  // Extract texts into an array
+            // //     const images = userData.map(entry => entry.image).filter(img => img); // Filter out null images
+            // //     //setImageUrls(images);  // Store the array of image URLs
+            // //     setImageUrls((prevImages) => [...prevImages, images]);
+            // //  console.log("set Images=",setImageUrls)
+
+            
+
+            //     const userData = res.data.data;
+            //     console.log("User Data:", userData);
+            //     setLine([userData.text]); // Store text as an array
+            //     // setImageUrl(userData.image); 
+            //     if (userData.profile_image_id) {
+            //         console.log("Profile Image ID2:", res.data.data.profile_image_id);
+            //        // setImageUrls((prevImages) => [...prevImages, userData.image]);
+            //         setImageUrls((prevImages) => [...prevImages, `http://localhost:5555/image/${res.data.data.profile_image_id}`]);
+            //     }  
+
+            // //     const userData = res.data; // This is an object, not an array
+            // //     console.log("user =",userData)
+            
+            // // // Convert object into an array before using .map()
+            // // // setLine([userData.text]);  
+            // // // setLine2([userData.image]); 
+
+            // // setLine(res.data.data.map(entry => entry.text)); 
+
+            //     // Store text as an array (so UI mapping logic still works)
+            // //     console.log("text",res.data.data.text)
+            // //    // setLine([...line,res.data.data.text]);
+            // //    setLine(res.data.data.map(entry => entry.text));
+
+            // //     // Store image URL as an array
+            // //     setLine2([res.data.data.image]); 
+            // }
+        } catch (error) {
+            console.log("Error fetching user data:", error);
+        }
+        
+    };
+
+    useEffect(() => {
+      
         if (userId) fetchUserData();
     }, [userId]);
     
+    const subhandle2 = async(id) =>{
+        console.log("id is deleted:",id) 
+      try{
+        const res = await axios.delete(`http://localhost:5555/user-data/${id}`);
+       // setItems(items.filter(() => .id !== id));
+       // setItems(items.filter((card) => card.id === id));
+      // setItems(items.filter((card) => card.id !== id));
+      // setItems((obj) => obj.filter((_,index) => index !== id) );
+      //setItems((obj) => obj.filter((item) => item.id !== id));
+
+     // setItems(items.filter((card) => card.id === id));
+      console.log("After delete",res.data)
+    if(res.data.success){
+        console.log("delete the card.")
+        //setItems((prevItems) => prevItems.filter((item) => item._id !== id));
+    } 
+    fetchUserData();
+
+}  catch (error) {
+    console.log("Error fetching user data:", error);
+}
+
+    }
 
     const subhandle = (async(e) => {
         e.preventDefault();
@@ -224,6 +249,7 @@ try {
             setImageUrls((prevImages) => [...prevImages, `https://memoria-api.onrender.com/image/${res.data.image_id}`]);
             console.log("this is after setImageUrls");
         }
+        fetchUserData();
     }
      else {
         alert(res.data.message);
@@ -276,6 +302,7 @@ try {
                  
                 <img className="log2-image" src={item.imagenew} alt="Uploaded" />
                 <p className="text-para">{item.textnew}</p>
+                <button className="res-del" onClick={() =>subhandle2(item.idnew)}> del</button>
                 </div>
             </div>
         ))}
