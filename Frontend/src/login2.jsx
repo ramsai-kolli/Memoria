@@ -148,6 +148,18 @@ function Login2(){
       
         if (userId) fetchUserData();
     }, [userId]);
+
+
+    const navigate = useNavigate();
+    const GoEdit = (idnew) =>
+    {
+        
+        //window.location.href=`/home4`;
+        console.log("go edit id:",idnew)
+        navigate('/home4', { state: { id1: idnew,userId1:userId } }); 
+    }
+
+
     
     const subhandle2 = async(id) =>{
         console.log("id is deleted:",id) 
@@ -303,6 +315,7 @@ try {
                 <img className="log2-image" src={item.imagenew} alt="Uploaded" />
                 <p className="text-para">{item.textnew}</p>
                 <button className="res-del" onClick={() =>subhandle2(item.idnew)}> del</button>
+                <button className="res-edit" onClick={() =>GoEdit(item.idnew)}>Edit</button>
                 </div>
             </div>
         ))}
