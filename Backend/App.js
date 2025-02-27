@@ -552,6 +552,22 @@ app.post('/login', async (req, res) => {
 //   }
 // });
 
+app.delete('/user-data/:id', async(req,res) => {
+  try{
+    const {id} = req.params;
+    console.log("id:",id);
+   const userdata= await Form2.findByIdAndDelete({_id: id});
+   console.log("user data in delete:",userdata);
+   if(!userdata){
+   return res.json({success:false})
+   }
+   return res.json({success:true})
+  }
+  catch(error){
+    res.status(500).json({ success: false, message: "Error deleting card" });
+  }
+})
+
 
 app.get('/user-data/:userId', async (req, res) => {
   try {
