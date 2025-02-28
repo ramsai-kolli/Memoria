@@ -27,7 +27,7 @@ function Edit(){
                 //setItems(res.data.data.map(entry => ({textnew: entry.text,imagenew: `http://localhost:5555/image/${entry.profile_image_id}`})));
                 //setItems(res.data.data.map(entry => ({textnew: entry.text})),res.data.data.map(entry => ({imagenew: `http://localhost:5555/image/${entry.profile_image_id}`})))
                 //entry => ({ textnew: entry.text, imagenew: `http://localhost:5555/image/${entry.profile_image_id}`})
-                setItems(res.data.data.map(entry => ({ idnew: entry._id, textnew: entry.text, imagenew: `http://localhost:5555/image/${entry.profile_image_id}`})))
+                setItems(res.data.data.map(entry => ({ idnew: entry._id, textnew: entry.text, imagenew: `https://memoria-api.onrender.com/image/${entry.profile_image_id}`})))
                 console.log("Items:",items)
                 // console.log("setItems:",setItems)
                 // setLine(res.data.data.map(entry => entry.text)); // Populate stored text
